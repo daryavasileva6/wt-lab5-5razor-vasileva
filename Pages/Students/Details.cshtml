@@ -1,0 +1,36 @@
+@page
+@model wt_lab5_5razor_vasileva.Pages.Students.DetailsModel
+
+@{
+    ViewData["Title"] = "Студент";
+}
+
+<div class="container py-4">
+    <div class="card shadow-sm rounded-4 mx-auto" style="max-width: 600px;">
+        <div class="card-body">
+            <h1 class="card-title mb-4">@Model.Student!.FullName</h1>
+
+            <dl class="row">
+                <dt class="col-sm-4">ID</dt>
+                <dd class="col-sm-8">@Model.Student.Id</dd>
+
+                <dt class="col-sm-4">ФИО</dt>
+                <dd class="col-sm-8">@Model.Student.FullName</dd>
+
+                <dt class="col-sm-4">Группа</dt>
+                <dd class="col-sm-8">@Model.Student.Group</dd>
+
+                <dt class="col-sm-4">Средний балл</dt>
+                <dd class="col-sm-8">@Model.Student.AverageGrade.ToString("F2")</dd>
+
+                <dt class="col-sm-4">Год поступления</dt>
+                <dd class="col-sm-8">@Model.Student.EnrollmentYear</dd>
+
+                <dt class="col-sm-4">Email</dt>
+                <dd class="col-sm-8">@Model.Student.Email</dd>
+            </dl>
+
+            <a asp-page="/Students/Index" class="btn btn-secondary">← Назад к списку</a>
+        </div>
+    </div>
+</div>
